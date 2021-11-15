@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="form-group candy-form">
+            <label class="label" for="case">Nhập vào số lần muốn kiểm tra</label>
+            <input type="number" placeholder="Nhập giá trị trong khoảng 1 đến 20" class="form-input case-input" id="case">
+            <span class="form-msg case-error"></span>
+        </div>
+        <div class="form-group lucky-number-form invisible">
+            <label class="label" for="ordinal">Bạn muốn tìm số may mắn thứ ...</label>
+            <input type="number" placeholder="Nhập vào 1 số thứ tự" class="form-input ordinal-input" id="ordinal">
+            <span class="form-msg ordinal-error"></span>
+        </div>
+        <div class="checked-result invisible"></div>
+        <button class="reset-btn">reset <span style="transform: rotate(90deg); display: inline-block;">&#8635</span></button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
