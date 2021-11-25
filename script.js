@@ -36,12 +36,14 @@ ordinalIp.onkeyup = function(e) {
     
     const ordinal = parseInt(e.target.value)
     if (e.keyCode === 13) {
-        if (ordinal) {
+        if (ordinal >= 1) {
             checkedCase ++
             checkRemainCase(checkedCase)
             getLuckyNumber(ordinal)
         } else {
-            inputRemain.innerText = 'Vui lòng nhập vào 1 số nguyên khác 0'
+            ordinalIp.value = ''
+            ordinalIp.focus()
+            inputRemain.innerText = 'Vui lòng nhập vào 1 số lớn hơn 0'
             inputRemain.classList.add('invalid')
         }
     }
