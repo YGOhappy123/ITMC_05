@@ -41,7 +41,7 @@ ordinalIp.onkeyup = function(e) {
             checkRemainCase(checkedCase)
             getLuckyNumber(ordinal)
         } else {
-            inputRemain.innerText = 'Vui lòng nhập vào 1 số nguyên'
+            inputRemain.innerText = 'Vui lòng nhập vào 1 số nguyên khác 0'
             inputRemain.classList.add('invalid')
         }
     }
@@ -75,14 +75,12 @@ function getLuckyNumberArray() {
         for (let i = 2; i <= n; i++) {
             while (n % i === 0) {
                 n = n / i
-                if (primeDivisorArr.indexOf(i) === -1) {
-                    primeDivisorArr.push(i)
-                    counter ++
-                    if (counter === 3) {
-                        resultArr.push(k)
-                        break k_loop
-                    }
-                }
+                if (primeDivisorArr.indexOf(i) !== -1) continue
+                primeDivisorArr.push(i)
+                counter ++
+                if (counter !== 3) continue
+                resultArr.push(k)
+                break k_loop
             }
         }
     }
