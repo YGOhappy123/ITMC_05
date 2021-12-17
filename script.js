@@ -67,28 +67,26 @@ function checkRemainCase(checkedCase) {
     }
 }
 
-function getLuckyNumberArray() {
+function getLuckyNumbers() {
     let resultArr = []
     for(let k = 1; k <=1000; k++) {
-        let counter = 0
         let n = k
-        let primeDivisorArr = []
-        k_loop:
+        let primeArr = []
+        for_loop:
         for (let i = 2; i <= n; i++) {
             while (n % i === 0) {
                 n = n / i
-                if (primeDivisorArr.indexOf(i) !== -1) continue
-                primeDivisorArr.push(i)
-                counter ++
-                if (counter !== 3) continue
+                if (primeArr.indexOf(i) !== -1) continue
+                primeArr.push(i)
+                if (primeArr.length !== 3) continue
                 resultArr.push(k)
-                break k_loop
+                break for_loop
             }
         }
     }
     return resultArr
 }
-const luckyNumberArr = getLuckyNumberArray()
+const luckyNumberArr = getLuckyNumbers()
 
 function getLuckyNumber(ordinal) {
     resultEl.classList.remove('invisible')
